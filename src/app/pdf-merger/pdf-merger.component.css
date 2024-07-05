@@ -1,0 +1,83 @@
+.pdf-merger {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.header {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.file-input {
+    margin-bottom: 20px;
+}
+
+.file-label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.merge-button,
+.download-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.merge-button:hover,
+.download-button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.merged-pdf-viewer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 100%;
+}
+
+pdf-viewer {
+    width: 70vw;
+    height: 80vh;
+    display: block;
+}
+
+.file-list {
+    margin-bottom: 20px;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.file-item span {
+    flex-grow: 1;
+    font-size: 14px;
+}
+
+.file-item input {
+    width: 200px;
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 14px;
+}

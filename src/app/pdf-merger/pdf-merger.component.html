@@ -1,0 +1,49 @@
+<div class="pdf-merger">
+  <h2 class="header">PDF Merger</h2>
+
+  <div class="file-input">
+    <label for="fileInput" class="file-label">Select PDF files:</label>
+    <input
+      type="file"
+      id="fileInput"
+      multiple
+      (change)="onFilesSelected($event)"
+      accept="application/pdf"
+    />
+  </div>
+
+  <div class="file-list">
+    <div *ngFor="let file of selectedFiles; let i = index" class="file-item">
+      <span>{{ file.name }}</span>
+      <input
+        type="text"
+        placeholder="Page ranges (e.g., 1-3,5)"
+        [(ngModel)]="file.pageRanges"
+      />
+    </div>
+  </div>
+
+  <button class="merge-button" (click)="mergePDFs()">Merge PDFs</button>
+
+  <div class="error-message" *ngIf="errorMessage && !fileSelected">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="mergedPDF" class="merged-pdf-viewer">
+    <pdf-viewer
+      [src]="mergedPDF"
+      [render-text]="true"
+      [show-all]="true"
+      [original-size]="false"
+      [zoom]="0.6"
+    >
+    </pdf-viewer>
+  </div>
+  <button
+    *ngIf="mergedPDF"
+    class="download-button"
+    (click)="downloadMergedPDF()"
+  >
+    Download Merged PDF
+  </button>
+</div>
